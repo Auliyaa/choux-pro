@@ -53,7 +53,9 @@ install(TARGETS choux
   DESTINATION bin
 )
 
-# ===========================================
-# Installer
-# ===========================================
-include(CPack)
+add_custom_target(redist ALL
+  COMMAND windeployqt.exe --dir ${CMAKE_BINARY_DIR}/redist $<TARGET_FILE:choux>
+  DEPENDS choux
+)
+
+install(DIRECTORY ${CMAKE_BINARY_DIR}/redist/ DESTINATION bin)
