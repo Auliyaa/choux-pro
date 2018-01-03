@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>choux_window</class>
+ <widget class="QMainWindow" name="choux_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>748</width>
+    <height>307</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Choux Pro CS12.28.15 alpha turbo prime</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Configuration</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="verticalSpacing">
+        <number>20</number>
+       </property>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="base">
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QSpinBox" name="last">
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+         <property name="value">
+          <number>3</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Nombre de choux (dernier étage):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QSpinBox" name="total">
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Nombre de choux (base):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Nombre de choux (total):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="reset">
+         <property name="text">
+          <string>Reset</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="results">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 100);
+font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>base</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>choux_window</receiver>
+   <slot>input_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>373</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>last</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>choux_window</receiver>
+   <slot>input_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>373</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>total</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>choux_window</receiver>
+   <slot>input_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>373</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reset</sender>
+   <signal>clicked()</signal>
+   <receiver>choux_window</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>373</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>input_changed()</slot>
+  <slot>reset()</slot>
+ </slots>
+</ui>
