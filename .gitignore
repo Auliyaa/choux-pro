@@ -4,3 +4,4 @@ install-*
 *.creator.user
 *.includes
 *.config
+*.files
